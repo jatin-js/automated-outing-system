@@ -1,0 +1,111 @@
+<!Doctype html>
+<html lang="UTF-8">
+<head>
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <!--    the below is very important in order to have the display according to the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>movie site</title>
+</head>
+<body>
+
+<div class="item-container">
+    <div class="container login">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Log In</h3>
+
+                </div>
+                <div class="card-body">
+                    <form action="/hod/login" method="post">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-id-card-alt"></i></span>
+                            </div>
+                            <input name="collegeId" type="number" class="form-control"
+                                   placeholder="CollegeId">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-mobile"></i></span>
+                            </div>
+                                <input name="mobileNo" type="tel" class="form-control" placeholder="Password">
+
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container register">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Register</h3>
+
+                </div>
+                <div class="card-body">
+                    <form action="/hod/register" method="post">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-id-card-alt"></i></span>
+                            </div>
+                            <input name="registrationNo" type="text" class="form-control" placeholder="College Id">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input name="username" type="text" class="form-control" placeholder="username">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-building"></i></span>
+                            </div>
+                            <input name="block" type="text" class="form-control" placeholder="block">
+                        </div>
+                     
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-mobile"></i></span>
+                            </div>
+                            <input name="mobileNo" type="tel" class="form-control" placeholder="Mobile number">
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                            </div>
+                            <input name="email" type="email" class="form-control" placeholder="email">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input name="password" type="password" class="form-control" placeholder="password">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Register" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+<head>
+    <!--    the below is very important in order to have the display according to the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="css/main-page.css" />
+    <title>OutPass</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 title">
+            <h2>Automated Outing System</h2>
+        </div>
+    </div>
+    <div class="row blank"></div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <!-- Indicates a successful or positive action -->
+            <form action="/student">
+                <button type="submit" class="btn btn-success ribbon">Student</button>
+            </form>
+
+            <!-- Contextual button for informational alert messages -->
+            <form action="/hod">
+                <button type="submit" class="btn btn-info ribbon">Care Taker</button>
+            </form>
+
+            <!-- Indicates caution should be taken with this action -->
+            <form action="/chiefWarden">
+                <button type="submit" class="btn btn-warning ribbon">Chief Warden</button>
+            </form>
+
+            <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+</div>
+</body>
+</html>

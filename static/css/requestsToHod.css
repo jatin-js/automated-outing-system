@@ -1,0 +1,150 @@
+body,html {
+    height: 100%;
+    background: url("../images/image.jpeg");
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.blank {
+    height: 20vh;
+}
+
+.card{
+    height: max-content;
+    margin: 10px 0 10px 0;
+    padding: 20px;
+    width: initial;
+    background-color: rgba(0,0,0,0.5) !important;
+    box-shadow: 2px 2px 7px 2px;
+}
+
+form label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+form .mode {
+    display: flex;
+    align-items: center;
+}
+
+form .mode label {
+    color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+}
+
+form .options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+form .options input {
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info .item {
+    display: flex;
+    align-items: center;
+}
+
+form .desc h4{
+    /*color: yellowgreen;*/
+    color: whitesmoke;
+}
+
+form .desc h5 {
+    /*color: whitesmoke;*/
+    color: yellowgreen;
+}
+
+button[type=submit] {
+    background-color: #FFC312;
+}
+
+.transport {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.transport button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.transport button:hover {
+    border: 2px solid yellowgreen;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.fa{
+    color: yellowgreen;
+}
+/* .hod-container and .hod are used combined so as to implement horizontal scrolling*/
+.hod-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.hod {
+    color: #ffffff;
+    display: inline-block;
+    float: none;
+
+}
+
+.disable-hod {
+    display: none;
+}
+
+/*modifying scrollbar*/
+.hod-container::-webkit-scrollbar, .item-container::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.hod-container::-webkit-scrollbar-thumb, .item-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 5px;
+}
+
+
+
+@media (max-width: 576px) {
+    .transport {
+        height: 60vh;
+        flex-direction: column;
+    }
+
+    .body-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mode {
+        justify-content: center;
+    }
+
+    .item {
+        -webkit-transform: scale3d(1, 1, 1);
+        text-align: center;
+    }
+
+}

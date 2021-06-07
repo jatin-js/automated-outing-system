@@ -1,0 +1,138 @@
+html,body {
+    height: 100%;
+    background: url("../images/image.jpeg");
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.blank {
+    height: max-content;
+    margin-bottom: 15vh;
+    color: yellowgreen;
+}
+
+.status, .name, .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFC312;
+    opacity: 0.9;
+}
+
+.logo {
+    color: #398439;
+}
+
+.logo h1 {
+    padding: 5px;
+}
+
+.name h1 {
+    opacity: 1;
+    border: 2px solid black;
+    padding: 5px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+button.dropdown-toggle {
+    background-color: transparent;
+}
+
+.card{
+    height: max-content;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 20px;
+    width: initial;
+    background-color: rgba(0,0,0,0.5) !important;
+    box-shadow: 2px 2px 7px 2px;
+}
+
+form label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+button[type=submit] {
+    background-color: #FFC312;
+}
+
+.transport {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.transport label {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.transport label:hover {
+    border: 2px solid yellowgreen;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.fa{
+    color: yellowgreen;
+}
+
+.transport p {
+    color: yellowgreen;
+}
+
+/* .hod-container and .hod are used combined so as to implement horizontal scrolling*/
+.hod-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.hod {
+    color: #ffffff;
+    display: inline-block;
+    float: none;
+}
+
+.hod label {
+    font-size: 1.75em   ;
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+}
+
+.disable-hod {
+    display: none;
+}
+
+/*modifying scrollbar*/
+.hod-container::-webkit-scrollbar, .item-container::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.hod-container::-webkit-scrollbar-thumb, .item-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 5px;
+}
+
+
+
+@media (max-width: 576px) {
+    .transport {
+        height: 110vh;
+        flex-direction: column;
+    }
+}

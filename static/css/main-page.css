@@ -1,0 +1,97 @@
+
+html,body {
+    height: 100%;
+    width: 100%;
+    background: url("../images/image.jpeg");
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+div.title {
+    width: 100%;
+    background-color: #FFC312;
+    opacity: 0.95;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+div.title h2 {
+    width: max-content;
+    margin: 20px auto auto;
+    background: -webkit-linear-gradient(left, #000, #e1ad01);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 70px;
+}
+
+div.blank {
+    height: 200px;
+}
+
+button {
+    margin: 20px 0;
+    line-height: 34px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    outline:none !important;
+    width:100%;
+}
+
+button.ribbon {
+    font-size: 20px;
+}
+
+button:active {
+
+    outline:none;
+}
+
+
+button:before, button:after {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-style: solid;
+    border-width: 0;
+    outline:none;
+}
+
+
+
+button.btn-success:before {
+    border-color: #398439 #398439 #398439 transparent;
+}
+button.btn-success:after {
+    border-color: #398439 transparent #398439 #398439;
+}
+
+
+button.btn-info:before {
+    border-color: #269abc #269abc #269abc transparent;
+}
+button.btn-info:after {
+    border-color: #269abc transparent #269abc #269abc;
+}
+
+
+button.btn-warning:before {
+    border-color: #d58512 #d58512 #d58512 transparent;
+}
+button.btn-warning:after {
+    border-color: #d58512 transparent #d58512 #d58512;
+}
+
+/*modifying scrollbar*/
+.hod-container::-webkit-scrollbar, .item-container::-webkit-scrollbar {
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.hod-container::-webkit-scrollbar-thumb, .item-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: 5px;
+}

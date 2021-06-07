@@ -1,0 +1,64 @@
+<!Doctype html>
+<html>
+<head>
+    <!--    the below is very important in order to have the display according to the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/status.css" />
+    <title>OutPass</title>
+</head>
+<body>
+
+<div class="item-container">
+    <div class="row blank"></div>
+    <div class="row">
+        <div class="col-lg-3 col-md-2 col-sm-2"></div>
+        <div class="col-lg-6 col-md-12 col-sm-8 application_container">
+            <% if(!application.length) { %>
+                <h1 class="display-1 font-weight-bold mt-5">No History Available!!</h1>
+            <% }
+            for (const i in application) { %>
+                <div class="card">
+                    <div class="row application-container">
+                        <div class="col-lg-8 col-md-12 details">
+                            <div class="info">
+                                <!-- use &nbsp;&nbsp; for adding extra blank space-->
+                                <div class="item">
+                                    <h4>From:&nbsp;&nbsp; &nbsp;&nbsp;</h4>
+                                    <h5> <%= (application[i].journey_from)%></h5>
+                                </div>
+                                <div class="item">
+                                    <h4>To:&nbsp;&nbsp; &nbsp;&nbsp;</h4>
+                                    <h5> <%= application[i].journey_to %></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 status">
+                            <input class="btn btn-outline-warning" type="button" name="forward" value="<%=
+                                application[i].status_at_initiater
+                            %>">
+                        </div>
+                        <div>
+                            <% if(application[i].rejectionreason!=''){ %>
+                                <h3 style="color:red">Reason: <span style="color:white"> <%= application[i].rejectionreason %> <span></h3>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+        <div class="col-lg-3 col-md-2"></div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+<script language="javascript">print_state("sts");</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!Doctype html>
+<html lang="UTF-8">
+<head>
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/studentForm.css" />
+    <!--    the below is very important in order to have the display according to the device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OutPass</title>
+
+</head>
+<body
+<div class="item-container">
+    <div class="row blank">
+        <div class="col-sm-3 logo">
+            <h1>NIT Andhra CSE</h1>
+        </div>
+        <div class="col-md-6 col-sm status">
+        </div>
+        <div class="col-sm-3 name">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <h1><%= studentName %></h1>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/">home</a>
+                    <a class="dropdown-item" href="/studentForm/status/<%= studentId %>">status</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <form class="card" action="/studentForm" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="journey_from_date">From</label>
+                        <input type="datetime-local" name="journey_from" class="form-control" id="journey_from_date"
+                               placeholder="Date" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="journey_to_date">To</label>
+                        <input type="datetime-local" name="journey_to" class="form-control" id="journey_to_date"
+                               placeholder="Date" required>
+                    </div>
+                </div>
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label for="sts">State</label>
+                        <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="journey_state"
+                                class="form-control" required></select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="state">City</label>
+                        <select id ="state" class="form-control" name="journey_city" required></select>
+
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" name="zipcode" class="form-control" id="inputZip" required>
+                    </div>
+                    <div class="form-group col-md-12 transportMode">
+                        <label class="form-check-label" for="mode">
+                            Mode of Transport
+                        </label>
+                    </div>
+                    <div class="form-group col-md-12 transport">
+                        <label for="plane">
+                            <span><i class="fa fa-plane-departure fa-5x"></i></span><br>
+                            <input type="radio" name="mode" value="plane" id="plane">plane
+                        </label>
+                        <label for="train">
+                            <span><i class="fa fa-train fa-5x"></i></span><br>
+                            <input type="radio" name="mode" value="train" id="train">train
+                        </label>
+                        <label for="bus">
+                            <span><i class="fa fa-bus fa-5x"></i></span><br>
+                            <input type="radio" name="mode" value="bus" id="bus">bus
+                        </label>
+                        <label for="car">
+                            <span><i class="fa fa-car fa-5x"></i></span><br>
+                            <input type="radio" name="mode" value="car" id="car">car
+                        </label>
+                        <label for="other">
+                            <span><i class="fa fa-hashtag fa-5x"></i></span><br>
+                            <input type="radio" name="mode" value="other" id="other">other
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="reason">Reason for Leave</label>
+                    <input type="text" name="reason" class="form-control" id="reason" placeholder="not more than 100 letters"
+                           required>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="showHod" onclick="hod_enabling()"
+                               required>
+                        <label class="form-check-label" for="showHod">
+                            Check if you have taken permission from your parents
+                        </label>
+                    </div>
+                </div>
+                    <div class="form-group hod-container disable-hod" id="hod-container">
+                        <% for(var i in hod) { %>
+                        <div class="col-md-6 hod">
+                            <label for="<%= hod[i].name %>">
+                                <input type="radio" name="department_hod" value="<%= hod[i].name %>" id="<%= hod[i].name %>"><%= hod[i].name %>
+                            </label>
+                        </div>
+                        <% } %>
+                    </div>
+
+                <button type="submit" class="btn">Your form sent to Care Taker successfully</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+<script language="javascript">print_state("sts");</script>
+</body>
+</html>
